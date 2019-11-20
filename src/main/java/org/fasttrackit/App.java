@@ -23,6 +23,25 @@ public class App
         carReference.running = false;
         carReference.doorCount = 2;
 
+        Engine carEngine = new Engine();
+        carEngine.manufacturer = "Renault";
+        carEngine.capacity = 1500;
+
+        carReference.engine = carEngine;
+
+
+        System.out.println("Engine details...");
+        System.out.println(carReference.engine.manufacturer);
+        System.out.println(carReference.engine.capacity);
+
+        double accelerationDistance = carReference.accelerate(60, 1);
+        System.out.println("Acceleration distance:" + accelerationDistance);
+
+        Mechanic mechanic = new Mechanic();
+        mechanic.repairVehicle(carReference);
+        System.out.println("Total traveled distance after repair:" + carReference.traveledDistance);
+
+
         Car car2 = new Car();
         car2.name = "BMW";
         car2.mileage = 14;
@@ -43,6 +62,7 @@ public class App
         System.out.println(car2.maxSpeed);
         System.out.println(car2.running);
         System.out.println(car2.doorCount);
+
 
         car2.name = "VW";
         System.out.println(car2.name);
