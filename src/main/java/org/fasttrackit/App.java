@@ -33,8 +33,6 @@ public class App
 
 
         carReference.engine = carEngine;
-
-
         System.out.println("Engine details...");
         System.out.println(carReference.engine.manufacturer);
         System.out.println(carReference.engine.capacity);

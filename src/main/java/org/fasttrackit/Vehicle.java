@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.security.PublicKey;
+
 public class Vehicle {
 
     // class variable

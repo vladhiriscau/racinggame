@@ -9,4 +9,8 @@ public class Car extends AutoVehicle {
     public Car(Engine engine) {
         super(engine);
     }
+    // CONTRUCTOR OVERLOADING
+    public Car() {
+        super(new Engine());
+    }
 }
