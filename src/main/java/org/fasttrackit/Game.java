@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Game {
@@ -10,18 +12,22 @@ public class Game {
         int playerCount = getPlayerCountFromUser();
         System.out.println("Number of players:" + playerCount);
 
-        String vehicleName = getVehicleNmeFromUser();
+        String vehicleName = getVehicleNameFromUser();
         System.out.println("Name from user:" + vehicleName);
 
     }
 
-    private String getVehicleNmeFromUser() {
+    private String getVehicleNameFromUser() {
+
         System.out.println("Please enter vehicle name.");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
 
     }
         private int getPlayerCountFromUser() {
+
+            LocalDateTime.now();
+
             System.out.println("Please enter vehicle number.");
             Scanner scanner = new Scanner(System.in);
             return scanner.nextInt();
