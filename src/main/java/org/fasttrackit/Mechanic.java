@@ -6,5 +6,6 @@ public class Mechanic {
         System.out.println("Repairing vehicle: " + vehicle.name);
         vehicle.traveledDistance = 0;
 
+
     }
 }
