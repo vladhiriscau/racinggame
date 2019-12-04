@@ -10,7 +10,7 @@ public class App
 
        // one line comment
 
-    public static void main( String[] args )
+    public static void main( String [] args )
 
     {
         System.out.println( "Welcome to the Racing game!" );
