@@ -1,6 +1,8 @@
 package org.fasttrackit;
 
 
+import javax.swing.*;
+
 /**
  * Hello world!
  *
@@ -17,6 +19,16 @@ public class App
 
         Game game = new Game();
         game.start();
+
+        JokerVehicle joker = new JokerVehicle();
+        joker.setName("Joker");
+        joker.setFuelLevel(80);
+
+        joker.accelerate(60, 1 );
+
+        System.out.println("Joker's total distance: " +
+                joker.getTraveledDistance());
+
 
         Engine carEngine = new Engine();
         carEngine.manufacturer = "Renault";
@@ -100,4 +112,7 @@ public class App
         System.out.println("Total vehicle count from vehicle2:" + vehicle2.totalCount);
         System.out.println("Total vehicle count from Vehicle class:" + Vehicle.totalCount);
 }
+
+
+
     }
