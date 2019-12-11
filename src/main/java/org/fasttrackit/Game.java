@@ -1,5 +1,6 @@
 package org.fasttrackit;
 
+import java.awt.image.ImageProducer;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,12 +20,41 @@ public class Game {
         initializeTracks();
         displayTracks();
 
+       Track selectedTrack = getSelectedTrackFromUser();
+
         initializeCompetitors();
 
         // enhanced for
         for (Vehicle vehicle : comepetitors) {
             System.out.println("It's " + vehicle.getName() + "'s turn.");
+            double speed = getAccelerationSpeedFromUser();
+
+            vehicle.accelerate(speed,1);
+
+            if (vehicle.getTraveledDistance() >= selectedTrack.getLenght()) {
+                System.out.println("The winner is " + vehicle.getName() + "!");
+                break;
+            }
         }
+    }
+
+    private double getAccelerationSpeedFromUser(){
+        System.out.println("Please enter acceleration speed.");
+        Scanner scanner = new Scanner(System.in);
+        return  scanner.nextDouble();
+    }
+
+    private  Track getSelectedTrackFromUser() {
+        displayTracks();
+        System.out.println("Please select truck number");
+        Scanner scanner = new Scanner(System.in);
+        int selected =scanner.nextInt();
+
+        Track selectedTrack = tracks [selected-1];
+
+        System.out.println("Selected truck is " + selectedTrack.getName());
+        return tracks [selected-1];
+
     }
 
     private void initializeCompetitors() {
